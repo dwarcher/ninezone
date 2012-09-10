@@ -1,0 +1,60 @@
+<!doctype html>  
+<head>
+	<script src="js/jquery.min.js" type="text/javascript"></script>
+	<script src="js/jquery.tmpl.min.js" type="text/javascript"></script>
+	<script src="js/ninezone.js" type="text/javascript"></script>
+	<link href="css/ninezone.css" rel="stylesheet" type="text/css" />
+ <script id="NinezoneTemplate" type="text/x-jQuery-tmpl">
+
+		<!-- top -->
+		<div style="width: ${cornerWidth}px; height: ${cornerHeight}px; background-image: url('${imgName}');" class="ninezone"></div>
+		<div style="width: ${insideWidth}px; height:${cornerHeight}px" class="ninezone"><img style="left: -${scaledCornerWidth}px; width:${scalePctX}px; height: ${fullHeight}px" class="ninezone" src='${imgName}'/></div>
+		<div style="width: ${cornerWidth}px; height: ${cornerHeight}px; background-position: ${cornerWidth}px 0px; background-image: url('${imgName}');" class="ninezone"></div>
+
+		<!-- middle -->
+		<div style="width: ${cornerWidth}px; height:${insideHeight}px" class="ninezone"><img style="top: -${scaledCornerHeight}px; width: ${fullWidth}px; height: ${scalePctY}px;" class="ninezone" src='${imgName}'/></div>
+		<div style="width: ${insideWidth}px; height:${insideHeight}px" class="ninezone body-content"><img style="z-index: -1; top: -${scaledCornerHeight}px; left: -${scaledCornerWidth}px; width: ${scalePctX}px; height: ${scalePctY}px;" class="ninezone" src='${imgName}'/></div>
+		<div style="width: ${cornerWidth}px; height:${insideHeight}px" class="ninezone"><img style="top: -${scaledCornerHeight}px; right: 0px; width: ${fullWidth}px; height: ${scalePctY}px;" class="ninezone" src='${imgName}'/></div>
+
+		<!-- bottom -->
+		<div style="width: ${cornerWidth}px; height: ${cornerHeight}px; background-position: 0px ${cornerHeight}px; background-image: url('${imgName}');" class="ninezone"></div>
+		<div style="width: ${insideWidth}px; height: ${cornerHeight}px" class="ninezone"><img style="bottom: 0px; left: -${scaledCornerWidth}px; width:${scalePctX}px; height: ${fullHeight}px" class="ninezone" src='${imgName}'/></div>
+		<div style="width: ${cornerWidth}px; height: ${cornerHeight}px; background-position: ${cornerWidth}px ${cornerHeight}px; background-image: url('${imgName}');" class="ninezone"></div>
+
+ </script>	
+
+	<style type="text/css">
+
+
+
+		div.ninezone-content
+		{
+			position: relative;
+			width: 100%;
+			height: 100%;
+		}
+
+
+
+
+	</style>
+</head>
+<body>
+	<script>
+	$(function() {
+
+
+		nineZoneify(".square1", "square.png", 64, 64, 22, 22);
+		nineZoneify("#ninezoneContainer2", "square2.png", 64, 64, 24, 24);
+		nineZoneify("#ninezoneContainer3", "square3.png", 64, 64, 24, 24);
+
+
+	});
+
+	</script>
+
+	<div class="square1" style="width: 100px; height:200px;"></div>
+	<div id="ninezoneContainer2" style="width: 400px; height:400px;"><div class="ninezone-content"><img style="float: right" src="square3.png"/>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam lacinia sem eget magna pellentesque vel egestas purus laoreet. Morbi urna dui, convallis quis fermentum vel, pretium nec elit. Morbi pharetra, lacus nec aliquet tristique, eros enim vulputate nisi, condimentum consequat diam enim vel sem. Sed ullamcorper, leo sed cursus vestibulum, sapien urna condimentum sem, sodales tincidunt magna lacus nec odio. Nunc congue, massa non hendrerit posuere, enim urna tristique purus,. </div></div>
+	<div id="ninezoneContainer3" style="width: 250px; height:64px;"></div>
+	<div class="square1" style="width: 100px; height:200px;"></div>
+</body>

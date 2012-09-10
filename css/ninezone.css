@@ -1,0 +1,13 @@
+div.ninezone
+{
+	float: left;
+	overflow: hidden;
+	position:relative;
+	left: 0px;
+	top: 0px;			
+}
+
+img.ninezone
+{
+	position: absolute;
+}		
